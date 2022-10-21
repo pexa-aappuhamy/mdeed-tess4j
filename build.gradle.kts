@@ -28,7 +28,7 @@ application {
 }
 
 dependencies {
-    implementation(files("libs/tess4j-5.4.0.jar"))
+    implementation("net.sourceforge.tess4j:tess4j:5.4.0")
     implementation("net.java.dev.jna:jna-platform-jpms:5.12.1")
     implementation("net.sourceforge.lept4j:lept4j:1.16.2")
     implementation("com.guicedee.services:sl4j:1.0.13.5-jre14")
