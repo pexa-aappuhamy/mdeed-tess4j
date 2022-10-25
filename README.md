@@ -30,3 +30,6 @@ TESSDATA_PREFIX=<path/to/tesseract(step3)>/share/tessdata
 ![tesseract env variable](docs/tessenv.png)
 
 6. Build and run the application it will output image in assets folder to searchable pdf in root directory of repo.
+``` shell 
+./gradlew run
+```

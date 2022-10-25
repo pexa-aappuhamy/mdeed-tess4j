@@ -1,0 +1,25 @@
+containers:
+  build-env:
+    build_directory: .batect/build
+    volumes:
+      - local: .
+        container: /app
+        options: cached
+      - type: cache
+        name: gradle-cache
+        container: /home/build-env/.gradle
+    run_as_current_user:
+      enabled: true
+      home_directory: /home/build-env
+    working_directory: /app
+    environment:
+      TESSDATA_PREFIX: ${TESSDATA_PREFIX}
+
+tasks:
+  build:
+    description: Build application to convert scanned pdf to searchable
+    run:
+      container: build-env
+      command: ./gradlew build
+      environment:
+        TESSDATA_PREFIX: usr/share/tessdata
