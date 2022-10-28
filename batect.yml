@@ -12,20 +12,6 @@ containers:
       enabled: true
       home_directory: /home/build-env
     working_directory: /app
-    
-  build-local-env:
-    build_directory: .batect/build-local
-    volumes:
-      - local: .
-        container: /app
-        options: cached
-      - type: cache
-        name: gradle-cache
-        container: /home/build-local-env/.gradle
-    run_as_current_user:
-      enabled: true
-      home_directory: /home/build-local-env
-    working_directory: /app
 
 tasks:
   build:
@@ -38,12 +24,6 @@ tasks:
     description: Run application to convert scanned pdf to searchable
     run:
       container: build-env
-      command: ./gradlew run
-  
-  run:local:
-    description: Run application in local environment (ARM64)
-    run:
-      container: build-local-env
       command: ./gradlew run
 
       
