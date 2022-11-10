@@ -26,4 +26,5 @@ dependencies {
     implementation("net.sourceforge.lept4j:lept4j:1.16.2")
     implementation("com.guicedee.services:sl4j:1.0.13.5-jre14")
     implementation("org.lucee:pdfbox:3.0.0.RC102")
+    implementation("org.apache.pdfbox:fontbox:3.0.0-RC1")
 }
